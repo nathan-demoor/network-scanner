@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
     client_fd = socket(AF_INET, SOCK_STREAM, 0);
 
-    if (client_fd == -1) {
+    if (client_fd < 0) {
         printf("Could not create a socket\n");
         return -1;
     }
@@ -30,9 +30,8 @@ int main(int argc, char *argv[]) {
     if (status = connect(client_fd, (struct sockaddr*)&my_addr, sizeof(my_addr)) < 0) {
         printf("Connection failed\n");
         return -1;
-    } else {
-        printf("Connection success\n");
     }
+    printf("Connection success\n");
 
     close(client_fd);
     return 0;
