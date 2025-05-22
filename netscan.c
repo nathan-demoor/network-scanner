@@ -11,7 +11,6 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    // target machine IP otherwise specify via the arguments
     char *target_ip = argv[1];
     int port = atoi(argv[2]);
     int status, client_fd;
@@ -25,10 +24,8 @@ int main(int argc, char *argv[]) {
 
     struct sockaddr_in my_addr;
     my_addr.sin_family = AF_INET;
-    // Port is defined here
     my_addr.sin_port = htons(port);
     
-    // IPv4 address is defined here
     if (inet_pton(AF_INET, target_ip, &my_addr.sin_addr) <= 0) {
         printf("Invalid address\n");
         return -1;
