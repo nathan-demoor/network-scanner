@@ -6,6 +6,7 @@
 #include <arpa/inet.h>
 
 int main(int argc, char *argv[]) {
+    // Depending on how many targets supplied call function accordingly
     if (argc < 3) {
         printf("Please pass an IP and port argument\n");
         return -1;
@@ -39,4 +40,12 @@ int main(int argc, char *argv[]) {
 
     close(client_fd);
     return 0;
+}
+
+void scan_single_port(ip, port) {
+    return 0;
+}
+
+void scan_all_ports(ip) {
+    int MAX_PORT = 65535 
 }
