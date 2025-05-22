@@ -1,2 +1,9 @@
 # Port scanner
-Network port scanner that scans very fast for TCP open ports
+Network port scanner that works as:
+- In IPv4
+- TCP bound connections (change to UDP later on)
+
+Make a C scanner that works as fast as possible with port scanning
+
+## Features to add
+- Allowing for both TCP and UDP connections
