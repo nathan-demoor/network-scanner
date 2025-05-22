@@ -2,11 +2,18 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <stdlib.h>
 #include <arpa/inet.h>
 
 int main(int argc, char *argv[]) {
+    if (argc < 3) {
+        printf("Please pass an IP and port argument\n");
+        return -1;
+    }
+
     // target machine IP otherwise specify via the arguments
-    char target_ip[] = "127.0.0.1";
+    char *target_ip = argv[1];
+    int port = atoi(argv[2]);
     int status, client_fd;
 
     client_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -19,7 +26,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in my_addr;
     my_addr.sin_family = AF_INET;
     // Port is defined here
-    my_addr.sin_port = htons(8080);
+    my_addr.sin_port = htons(port);
     
     // IPv4 address is defined here
     if (inet_pton(AF_INET, target_ip, &my_addr.sin_addr) <= 0) {
