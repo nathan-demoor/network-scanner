@@ -1,8 +1,9 @@
-# Port scanner
+# Network scanner
 Network port scanner that works as:
 - In IPv4
 - TCP bound connections (change to UDP later on)
 
+## Summary
 Make a C scanner that works as fast as possible with port scanning
 
 ## Features to add
