@@ -7,6 +7,4 @@ Network port scanner that works as:
 Make a C scanner that works as fast as possible with port scanning
 
 ## Features to add
-- Allowing for both TCP and UDP connections
-- Expansion to argument supplying interactive and argument based
-- Scanning multiple ports, displaying output during scan
+- Add multi-threading feature
