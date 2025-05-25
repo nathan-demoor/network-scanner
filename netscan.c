@@ -23,7 +23,7 @@ int scan_single_port(char ip[], int port) {
     }
 
     if (connect(fd, (struct sockaddr*)&my_addr, sizeof(my_addr)) == 0) {
-        printf("Connection success port: %d\n", port);
+        printf("Connection %s success port: %d\n", ip, port);
     }
 
     close(fd);
